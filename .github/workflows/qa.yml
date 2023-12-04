@@ -1,0 +1,18 @@
+name: qa
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cpp-linter:
+    name: Check formatting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Clang-format style check
+        uses: jidicula/clang-format-action@v4.3.0
+        with:
+          clang-format-version: '14'
+          check-path: .
