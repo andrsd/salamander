@@ -9,11 +9,11 @@ on:
       - main
 
 env:
-  OPENSAL_BUILD_DIR: ${{ github.workspace }}/build
+  OPENSAL_BUILD_DIR: ${{ github.workspace }}\build\
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-2022
     defaults:
       run:
         shell: pwsh
@@ -23,7 +23,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Populate build
-        run: ${{ github.workspace }}\src\vcxproj\!populate_build_dir.cmd
+        run: |
+          cd ${{ github.workspace }}\src\vcxproj
+          .\!populate_build_dir.cmd
 
       - name: Build
-        run: ${{ github.workspace }}\src\vcxproj\build.cmd
+        run: |
+          cd ${{ github.workspace }}\src\vcxproj
+          .\rebuild.cmd

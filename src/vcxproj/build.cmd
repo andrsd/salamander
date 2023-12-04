@@ -1,6 +1,6 @@
 @echo off
 
-#set MSB=C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe
+rem set MSB=C:\Program Files\Microsoft Visual Studio\2022\Community\Msbuild\Current\Bin\MSBuild.exe
 set MSB=C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Msbuild\Current\Bin\MSBuild.exe
 
 if "%OPENSAL_BUILD_DIR%"=="" (
